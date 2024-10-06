@@ -57,7 +57,7 @@ function startServer(port: number) {
 }
 
 // Start the server on the specified port or default to port 8080
-const PORT = parseInt(process.env.PORT || "8080", 10);
+const PORT = parseInt(process.env.PORT || "5000", 10);
 
 startServer(PORT);
 app.use(globalErrorHandler);
