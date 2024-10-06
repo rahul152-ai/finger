@@ -21,7 +21,7 @@ function dbConnect() {
         try {
             mongoose_1.default
                 .connect(DB_URL, {
-                serverSelectionTimeoutMS: 30000,
+                serverSelectionTimeoutMS: 30000, // 30 seconds timeout for initial connection
                 socketTimeoutMS: 45000, // 45 seconds timeout for socket operations
             })
                 .then((result) => {

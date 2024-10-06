@@ -67,7 +67,7 @@ const addStudent = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
             batchId,
             mobileNumber,
             address,
-            fingerPrint: filePaths,
+            fingerPrint: filePaths, // Store file paths in DB
             createdBy: req.user._id,
         });
         // If student creation is successful, update the studentCount in the batch
@@ -145,7 +145,7 @@ const getStudentById = (req, res, next) => __awaiter(void 0, void 0, void 0, fun
             .select("-__v -createdAt -updatedAt") // Exclude fingerPrint from the response
             .populate({
             path: "batchId",
-            model: batch_1.default,
+            model: batch_1.default, // Use the Batch model directly here
             select: "batchName", // Select batch fields that you want to return
         })
             .exec();
